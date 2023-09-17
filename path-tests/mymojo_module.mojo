@@ -1,5 +1,5 @@
-from abc import MyPairr
+from lib_maneira import Abc
 
 fn main():
-    let mine = MyPairr(2, 4)
-    mine.dump()
+    let mine = Abc(2, 4)
+    mine.sum()

@@ -39,20 +39,19 @@ def install(repo_url:str) -> int:
     username = getpass.getuser()
     dirs = os.listdir(f'/home/{username}')
 
-    if ".mojo_modules" not in dirs:
-        rich_error("""MPAK Was not installed correctly. 
-        Please run `mpak init` to initialize mpak.""")
+    if ".modular" not in dirs:
+        rich_error(""".modular folder not found, so Mojo was not installed correctly. Please contact Modular's support""")
         return 1
     try:
         rich_info(f"Found package {pkg_name}")
         rich_info("Trying to install...")
-        subprocess.check_call(["cd", f"/home/{username}/.mojo_modules", "&&", "git", "clone", repo_url], shell=False)
+        subprocess.check_call(["cd", f"/home/{username}/.modular/pkg/packages.modular.com_mojo/lib/mojo/", "&&", "git", "clone", repo_url], shell=False)
         rich_sucess(f"Package {pkg_name} installed")
         return 0 
     except Exception as e:
         with open("error.log", "w") as f:
             f.write(str(e))
-        rich_error(f"Failed to install package {pkg_name}")
+        rich_error(f"Failed to install package {pkg_name}. Full details in error.log")
         return 1
 
 def uninstall(pkg_name:str) -> int:

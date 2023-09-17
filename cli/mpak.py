@@ -24,12 +24,6 @@ def uninstall_package(pkg_name:str) -> None:
     '''
     uninstall(pkg_name)
 
-@app.command("init")
-def init_project() -> None:
-    '''
-    Initializes your project
-    '''
-    init()
 
 if __name__ == "__main__":
     import os
