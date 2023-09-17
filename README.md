@@ -24,4 +24,4 @@ Make sure to replace `<package_name>` with the actual name of the package you wa
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
+This project is free for commercial use.
