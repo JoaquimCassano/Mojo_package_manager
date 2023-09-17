@@ -1,11 +1,10 @@
 from tools.repos import *
 from tools.auth import *
 from fastapi import FastAPI, Request, Response
-import json
 
 app = FastAPI()
 
-@app.get("/repos/create")
+@app.post("/repos/create")
 def create_repo(data:dict) -> Response:
     add_repo(data)
     return Response(status_code=200)
