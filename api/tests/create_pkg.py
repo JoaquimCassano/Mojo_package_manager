@@ -8,7 +8,7 @@ data = {
     "repo": {
         "name": "tubinho",
         "description": "aaaaaaaaaa",
-        "github_url": "dummy_github_url"
+        "github_url": "https://github.com/SoUmNerd/Mojo_package_manager"
     },
     "user": {
         "username": "dummy_username",
@@ -17,5 +17,5 @@ data = {
         "email": "dummy_email"
     }
 }
-#requests.get(url, json=data)
-print(requests.get('http://localhost:8000/repos/').json())
+requests.get(url, json=data)
+print(requests.get('http://localhost:8000/repos/').content)

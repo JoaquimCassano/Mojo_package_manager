@@ -1,5 +1,6 @@
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
+import ssl
 
 uri = "mongodb+srv://tubilo:admin@mojopak.buok0w6.mongodb.net/?retryWrites=true&w=majority"
 # Create a new client and connect to the server
@@ -69,4 +70,4 @@ def search_repo(name:str) -> dict|None:
             }
             OR None, if not found
     '''
-    return collection.find_one({"name": name})
+    return collection.find_one({"repo.name": name})
